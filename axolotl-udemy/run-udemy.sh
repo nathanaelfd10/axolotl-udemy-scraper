@@ -1,0 +1,1 @@
+java -jar -Dserver.port=8083 target/axolotl-1.5.jar  --spring.profiles.active=udemy

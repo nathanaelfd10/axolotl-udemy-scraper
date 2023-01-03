@@ -1,0 +1,48 @@
+spring:
+  datasource:
+   url: jdbc:mysql://localhost:3306/axolotl?useSSL=false&serverTimeZone=UTC
+   username: axolotl
+   password: axolotl
+   driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+   database-platform: org.hibernate.dialect.MySQLDialect
+   generate-ddl: true
+   hibernate:
+    ddl-auto: update
+  profiles:
+    active: usage_message
+
+logging:
+  level:
+    org: 
+     ERROR
+
+amqp-test:
+  client:
+    duration: 10000
+    
+worker:
+ retry-limit: 5
+ retry-timeout: 200
+ 
+playwright:
+ args: --disable-gpu, --disable-dev-shm-usage, --disable-setuid-sandbox, --no-sandbox, --ignore-certificate-errors
+ defaultTimeout: 15000
+ headless: true
+ browser: 
+  type: chromium
+  channel: chromium
+  
+scraper:
+ shopeeMinTimeout: 4000
+ shopeeMaxTimeout: 13000
+
+custom-job:
+ condition-check:
+  filepath-csv: c:/csv/tplink_product_condition.csv 
+  
+server:
+  defaultPort: 8080
+  port: 8080
+  servlet:
+   contextPath: /axolotl

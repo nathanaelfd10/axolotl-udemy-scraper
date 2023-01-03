@@ -1,0 +1,1 @@
+java -jar -Dserver.port=8083 target/axolotl-0.0.1-SNAPSHOT.jar  --spring.profiles.active=product-condition-check
